@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/abril_fatface</item>
+        <item>@font/akaya_telivigala</item>
+        <item>@font/bungee</item>
+        <item>@font/dm_serif_display</item>
+        <item>@font/hepta_slab_bold</item>
+        <item>@font/saira_stencil_one</item>
+    </array>
+</resources>
