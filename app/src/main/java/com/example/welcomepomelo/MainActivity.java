@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button start = findViewById(R.id.btnStart);
         start.setOnClickListener(v -> {
-            Intent i = new Intent(MainActivity.this, SelectPicture.class);
+            Intent i = new Intent(MainActivity.this, PredictPage.class);
             startActivity(i);
         });
     }

@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.CAMERA"/>
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,12 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WelcomePomelo">
-        <activity
-            android:name=".showPicture"
-            android:exported="false" />
-        <activity
-            android:name=".SelectPicture"
-            android:exported="false" />
         <activity
             android:name=".PredictPage"
             android:exported="false" />
