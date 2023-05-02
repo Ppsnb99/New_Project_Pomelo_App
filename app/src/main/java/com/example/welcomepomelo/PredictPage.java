@@ -114,7 +114,7 @@ public class PredictPage extends AppCompatActivity {
             String[] classes = {"ระยะติดดอก 0-2.5 เดือน", "ระยะติดผล 3-6 เดือน", "ระยะเก็บผล 6.5-8 เดือน"};
             result.setText(classes[maxPos]);
 
-            // Releases model resources if no longer used.
+            // Releases model resources if no longer used..
             model.close();
         } catch (IOException e) {
             // TODO Handle the exception
