@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
-        <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/drawable/background_popup.xml" value="0.19444444444444445" />
+        <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/drawable/btn_bg_popup.xml" value="0.23796296296296296" />
+        <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/layout/activity_main3.xml" value="0.1171875" />
         <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/layout/activity_page2.xml" value="0.264" />
         <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/layout/activity_page3.xml" value="0.25416666666666665" />
@@ -12,6 +14,7 @@
         <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/layout/activity_show_picture.xml" value="0.23052536231884058" />
         <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/layout/activity_show_picture2.xml" value="0.13125" />
         <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/layout/activity_third.xml" value="0.13125" />
+        <entry key="..\:/Users/User/StudioProjects/WelcomePomelo/app/src/main/res/layout/popup_page3.xml" value="0.536" />
       </map>
     </option>
   </component>

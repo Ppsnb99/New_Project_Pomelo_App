@@ -3,10 +3,15 @@ package com.example.welcomepomelo;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build;
@@ -14,9 +19,11 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.welcomepomelo.ml.Model;
@@ -36,6 +43,7 @@ public class PredictPage extends AppCompatActivity {
     ImageView imageView2;
     TextView result;
     int imageSize = 640;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +57,16 @@ public class PredictPage extends AppCompatActivity {
         result = findViewById(R.id.result);
         imageView2 = findViewById(R.id.imageView2);
 
+        dialog = new Dialog(this);
+
+
+
+        openPopUp();
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                //camera_code
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -61,9 +75,10 @@ public class PredictPage extends AppCompatActivity {
                         requestPermissions(new String[]{Manifest.permission.CAMERA}, 100);
                     }
                 }
-            }
 
+            }
         });
+
         gallery.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -72,6 +87,34 @@ public class PredictPage extends AppCompatActivity {
                 }
             });
         }
+
+
+        //divice popup
+    private void openPopUp() {
+        dialog.setContentView(R.layout.popup_page3);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        ImageView imageViewClose = dialog.findViewById(R.id.imageViewClose);
+        Button btn_okey = dialog.findViewById(R.id.btn_okey);
+
+        imageViewClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Toast.makeText(PredictPage.this, "close", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btn_okey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Toast.makeText(PredictPage.this, "ฉันเข้าใจแล้ว", Toast.LENGTH_SHORT).show();
+            }
+        });
+        dialog.show();
+    }
+
+
     public void classifyImage(Bitmap image){
         try {
             Model model = Model.newInstance(getApplicationContext());
