@@ -42,7 +42,7 @@ public class PredictPage extends AppCompatActivity {
     Button camera, gallery;
     ImageView imageView2;
     TextView result;
-    int imageSize = 640;
+    int imageSize = 290;
     Dialog dialog;
 
     @Override
@@ -120,7 +120,7 @@ public class PredictPage extends AppCompatActivity {
             Model model = Model.newInstance(getApplicationContext());
 
             // Creates inputs for reference.
-            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 640, 640, 3}, DataType.FLOAT32);
+            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 290, 290, 3}, DataType.FLOAT32);
             ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4 * imageSize * imageSize * 3);
             byteBuffer.order(ByteOrder.nativeOrder());
 
@@ -137,12 +137,12 @@ public class PredictPage extends AppCompatActivity {
                     byteBuffer.putFloat((val & 0xFF) * (1.f / 1));
                 }
             }
-
             inputFeature0.loadBuffer(byteBuffer);
 
             // Runs model inference and gets result.
             Model.Outputs outputs = model.process(inputFeature0);
             TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
+
 
             float[] confidences = outputFeature0.getFloatArray();
             // find the index of the class with the biggest confidence.
@@ -154,7 +154,7 @@ public class PredictPage extends AppCompatActivity {
                     maxPos = i;
                 }
             }
-            String[] classes = {"ระยะติดดอก 0-2.5 เดือน", "ระยะติดผล 3-6 เดือน", "ระยะเก็บผล 6.5-8 เดือน"};
+            String[] classes = {"ผลสุก", "ผลอ่อน"};
             result.setText(classes[maxPos]);
 
             // Releases model resources if no longer used..

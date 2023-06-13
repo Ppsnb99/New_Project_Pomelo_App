@@ -9,16 +9,18 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="333dp"
+            android:layout_height="333dp">
 
             <ImageView
                 android:id="@+id/imageViewClose"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="21dp"
+                android:layout_height="26dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,15 +45,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:text="ควรมีระยะห่างในการถ่ายภาพประมาณ                             30 เซนติเมตร และควรใช้ฉากหลังสีขาวเพื่อให้การประมวลผลมีประสิทธิภาพขึ้น"
+                android:text="ควรมีระยะห่างในการถ่ายภาพประมาณ                             15 เซนติเมตรเพื่อให้การประมวลผลมีประสิทธิภาพขึ้น"
                 android:textColor="#231E1E"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/btn_okey"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -72,8 +75,8 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="181dp"
-                android:layout_height="98dp"
+                android:layout_width="142dp"
+                android:layout_height="87dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
